@@ -5,6 +5,7 @@ import {
   Image,
   TextInput,
   ScrollView,
+  Platform,
 } from "react-native";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -37,7 +38,9 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <SafeAreaView className="bg-white pt-5">
+    <SafeAreaView
+      className={`${Platform.OS === "ios" ? "py-5" : "py-12"} bg-white`}
+    >
       {/* Header */}
       <View className="flex-row pb-3 items-center mx-4 space-x-2">
         <Image
